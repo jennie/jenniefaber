@@ -1,0 +1,93 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@icon-font-path: "../bower_components/bootstrap/dist/fonts/glyphicons/";
+
+// ¯\_(ツ)_/¯
+
+// @import "bourbon/bourbon"
+// @import "base/base"
+
+@blue: rgba(24, 3, 181, 1);
+h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
+  
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "aw-conqueror-carved-one",sans-serif;
+}
+body {
+  font-family: "franklin-gothic-urw";
+  // font-size: 14px;
+  // line-height: 1.52;
+  color: #444;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: @screen-md-min) {
+  .content-wrap {
+    .page { width: 50%; }
+  }
+  #intro {
+    p {
+      line-height: 1.52;
+      font-size: 18px;
+    }
+  }
+
+}
+@media (min-width: @screen-lg-min) {
+  body {
+    .content-wrap {
+      width: auto;
+      .page { width: 50%; }
+    }
+    #intro {
+      p { font-size: 22px; }
+    }
+  }
+}
+
+
+a {
+  color: @blue;
+  text-decoration: underline;
+}
+#intro {
+
+
+  p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+    color: @blue;
+    a {
+      font-weight: 900;
+      background: yellow;
+    }
+  }
+}
+header {
+  margin-bottom: 20px;
+  @media (min-width: @screen-md-min) {
+    margin-bottom: 50px;
+  }
+  background: url(../images/18574173_7bafdc50db_b.gif);
+  background-size: cover;
+  height: 320px;
+  h1 {
+    color: yellow;
+    padding: 10px 0 20px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1em;
+    letter-spacing: 1px;
+    font-family: "aw-conqueror-carved-one",sans-serif;
+    text-shadow: 3px 3px 0px @blue;
+    font-size: 65px;
+  }
+}
+pre {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
