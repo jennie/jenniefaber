@@ -8,18 +8,45 @@
 
 @blue: rgba(24, 3, 181, 1);
 h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
-  
+
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "aw-conqueror-carved-one",sans-serif;
 }
 body {
   font-family: "franklin-gothic-urw";
-  // font-size: 14px;
-  // line-height: 1.52;
-  color: #444;
+  font-size: 16px;
+  line-height: 1.52;
+  color: @blue;
   background-color: #fff;
   text-rendering: optimizeLegibility;
+
+  &.internal {
+    h3,h4 {
+      color: @blue;
+    }
+
+    h3 {
+      font-size: 32px;
+    }
+
+    .selections {
+      .selection {
+        border-bottom: solid 4px @blue;
+        padding: 0 0 4em 0;
+        margin: 4em 0 0 0;
+        &:first-child {
+          margin: 0;
+        }
+        img {
+          .img-responsive();
+        }
+        .ss {
+          margin-top: 2em;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: @screen-md-min) {
@@ -45,24 +72,22 @@ body {
     }
   }
 }
-
-
-a {
-  color: @blue;
-  text-decoration: underline;
-}
 #intro {
-
-
   p {
-    font-size: 22px;
-    line-height: 1.5;
-    margin: 0 0 1em 0;
     color: @blue;
-    a {
-      font-weight: 900;
-      background: yellow;
-    }
+  }
+}
+p {
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+  &.lead {
+    color: @blue;
+  }
+  a {
+    font-weight: 900;
+    background: yellow;
+    color: @blue;
+    text-decoration: underline;
   }
 }
 header {
@@ -72,10 +97,10 @@ header {
   }
   background: url(../images/18574173_7bafdc50db_b.gif);
   background-size: cover;
-  height: 320px;
+
   h1 {
     color: yellow;
-    padding: 10px 0 20px;
+    padding: 2em 0;
     text-align: center;
     margin: 0 auto;
     line-height: 1em;
