@@ -38,8 +38,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/*.html',
-          '<%= yeoman.app %>/*/*.html',
+          '<%= yeoman.app %>/**/*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -51,7 +50,7 @@ module.exports = function (grunt) {
         port: 9000,
         // change this to '0.0.0.0' to access the server from outside
         hostname: 'localhost',
-        livereload: 35729
+        livereload: 35720
       },
       livereload: {
         options: {
@@ -128,22 +127,13 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.less']
         },
         options: {
-          sourceMap: false
-
+          sourceMap: true,
+          sourceMapFilename: '<%= yeoman.app %>/styles/main.css.map',
+          sourceMapBasepath: '<%= yeoman.app %>/',
+          sourceMapRootpath: '/'
         }
       }
     },
-    // not used since Uglify task does concat,
-    // but still available if needed
-    /*concat: {
-      dist: {}
-    },*/
-    // not enabled since usemin task does concat and uglify
-    // check index.html to edit your build targets
-    // enable this task if you prefer defining your build targets here
-    /*uglify: {
-      dist: {}
-    },*/
     rev: {
       dist: {
         files: {
@@ -157,13 +147,13 @@ module.exports = function (grunt) {
       }
     },
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.app %>/**/*.html',
       options: {
         dest: '<%= yeoman.dist %>'
       }
     },
     usemin: {
-      html: ['<%= yeoman.dist %>/**/*.html'],
+      html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         dirs: ['<%= yeoman.dist %>']
@@ -201,21 +191,10 @@ module.exports = function (grunt) {
     },
     htmlmin: {
       dist: {
-        options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: '**/*.html',
+          src: ['*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -231,7 +210,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'fonts/{,*/}*.*',
             '.htaccess',
-            'images/{,*/}*.{webp,gif}'
+            'images/{,*/}*.{webp,gif}',
+            ['**/*.html']
           ]
         }]
       },
@@ -250,8 +230,9 @@ module.exports = function (grunt) {
       dist: [
         'coffee',
         'less',
-        'htmlmin',
-        'imagemin'
+        //'imagemin',
+        'svgmin',
+        'htmlmin'
       ]
     }
   });
@@ -291,8 +272,6 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent',
     'cssmin',
-    'concat',
-    'uglify',
     'copy',
     'rev',
     'usemin'
