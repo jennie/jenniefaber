@@ -1,0 +1,92 @@
+@blue: rgba(24, 3, 181, 1);
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  line-height: 1.52;
+  color: #444;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+  margin: 0 4vw;
+
+}
+#intro, header {
+  width: 92vw;
+  @media only screen and (min-width: 37.5em) {
+    width: 62vw;
+
+  }
+
+}
+
+p {
+  line-height: 1.5;
+  font-size: ~"calc(12px + .5vw)";
+  margin: 0 0 1rem 0;
+
+  &:first-of-type {
+    font-weight: 700;
+    font-size: ~"calc(16px + .7vw)";
+    color: #000
+  }
+  &.lead {
+    color: #000;
+  }
+}
+header {
+  margin-bottom: 2rem;
+
+  h1 {
+    color: #000;
+    letter-spacing: .5vw;
+    font-size: ~"calc(22px + 2vw)";
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+}
+
+// Colors
+@color-accent     : rgb(43,254,196);
+@color-text-body  : rgb(0,0,0);
+@color-text-light : rgb(184, 186, 188);
+@color-ui-light   : lighten(@color-text-light, 14%);
+
+// Custom link underline
+// ---------------------
+a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  // Underline via gradient background
+  background-image: linear-gradient(desaturate(@color-accent, 0.25) 0%, @color-accent 100%);
+  background: linear-gradient(135deg, @color-accent, @color-accent);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 95%;
+  // Tweak position + thickness for high res (1.75x and up) displays
+  @media (-webkit-min-device-pixel-ratio: 1.75),
+  (min-resolution: 168dpi) {
+    background-image: linear-gradient(desaturate(@color-accent, 0.25) 0%, @color-accent 100%);
+    background-position: 0 93%;
+  }
+  // Clear descendors from underline
+  text-shadow: 3px 0 white, 2px 0 white, 1px 0 white, -1px 0 white, -2px 0 white, -3px 0 white;
+  &:hover {
+    background-image: linear-gradient(to bottom, darken(@color-accent, 100%) 0%, darken(@color-accent, 100%) 100%);
+  }
+  // Style selected links (or else text-shadow makes it look  ugly)
+  // Pseudo selectors must go separately, or they break each other
+  &,
+  > * {
+    &::selection {
+      background-color: lighten(@color-accent, 65%);
+      color: @color-text-body;
+      text-shadow: none;
+    }
+    &::-moz-selection {
+      background-color: lighten(@color-accent, 65%);
+      color: @color-text-body;
+      text-shadow: none;
+    }
+  }
+}
