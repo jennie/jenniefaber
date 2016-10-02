@@ -1,12 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
   line-height: 1.52;
   color: #444;
   background-color: #fff;
   text-rendering: optimizeLegibility;
   margin: 0 4vw;
-
 }
 #content {
   width: 92vw;
@@ -15,22 +14,17 @@ body {
   }
 }
 #intro, header {
-
   p:first-of-type {
     font-weight: 700;
     font-size: ~"calc(16px + .7vw)";
-    color: #000;
+    color: #444;
     line-height: 1.3;
   }
-
 }
-
 p {
   line-height: 1.5;
   font-size: ~"calc(12px + .5vw)";
   margin: 0 0 1rem 0;
-
-
   &.lead {
     color: #000;
   }
@@ -38,53 +32,43 @@ p {
 header {
   margin-bottom: 2rem;
   h1 {
-    color: #ff8a65;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #000;
     letter-spacing: .1vw;
     font-size: ~"calc(22px + 2vw)";
     line-height: 1.2;
     text-transform: uppercase;
   }
 }
-
 section {
 	border-top: .15rem solid transparent;
 	border-image: 100% 0 0 linear-gradient(90deg, currentColor 25vw, transparent 0);
 	padding-top: .5rem;
 }
 
+// Fancy link underlines
 
-
-// Colors
 @color-accent     : rgb(43,254,196);
 @color-text-body  : rgb(0,0,0);
-@color-text-light : rgb(184, 186, 188);
-@color-ui-light   : lighten(@color-text-light, 14%);
 
-// Custom link underline
-// ---------------------
 a {
   color: #000;
   font-weight: 700;
   text-decoration: none;
-  // Underline via gradient background
   background-image: linear-gradient(desaturate(@color-accent, 0.25) 0%, @color-accent 100%);
   background: linear-gradient(135deg, @color-accent, @color-accent);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 95%;
-  // Tweak position + thickness for high res (1.75x and up) displays
   @media (-webkit-min-device-pixel-ratio: 1.75),
   (min-resolution: 168dpi) {
     background-image: linear-gradient(desaturate(@color-accent, 0.25) 0%, @color-accent 100%);
     background-position: 0 93%;
   }
-  // Clear descendors from underline
   text-shadow: 3px 0 white, 2px 0 white, 1px 0 white, -1px 0 white, -2px 0 white, -3px 0 white;
   &:hover {
     background-image: linear-gradient(to bottom, darken(@color-accent, 100%) 0%, darken(@color-accent, 100%) 100%);
   }
-  // Style selected links (or else text-shadow makes it look  ugly)
-  // Pseudo selectors must go separately, or they break each other
   &,
   > * {
     &::selection {
