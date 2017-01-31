@@ -461,6 +461,7 @@ section#hire-me .btn {
   font-size: 0.875rem;
   padding: 15px 50px;
   text-transform: none;
+  margin: 1rem 0;
 }
 section#hire-me .btn:hover {
   background: #0620ff;
