@@ -308,7 +308,7 @@ body {
 }
 .bg {
   background: rgba(255, 255, 255, 0);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 160px, #ccc 40%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 160px, #eee 40%, rgba(255, 255, 255, 0) 100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -402,6 +402,12 @@ header h2 {
   #sections section:nth-child(4) {
     width: 90%;
   }
+  #sections section:nth-child(5) {
+    width: 73%;
+  }
+  #sections section:nth-child(6) {
+    width: 60%;
+  }
 }
 #sections section > div {
   border-top: solid 0.4rem #000;
@@ -418,6 +424,10 @@ header h2 {
   min-height: 200px;
   max-width: 100%;
   background-position: center center;
+}
+#sections section .section-image#observer {
+  min-height: 320px;
+  max-width: 320px;
 }
 #sections section h2 {
   font-family: 'monostena', 'Consolas', 'monospace';

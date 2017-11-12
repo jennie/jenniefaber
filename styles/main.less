@@ -114,18 +114,13 @@ header {
     position: relative;
     margin: 3rem 0 0;
     @media only screen and (min-width: 37.5em) {
-      &:nth-child(1) {
-        width: 100%;
-      }
-      &:nth-child(2) {
-        width: 80%;
-      }
-      &:nth-child(3) {
-        width: 70%;
-      }
-      &:nth-child(4) {
-        width: 90%;
-      }
+      &:nth-child(1) { width: 100%; }
+      &:nth-child(2) { width: 80%; }
+      &:nth-child(3) { width: 70%; }
+      &:nth-child(4) { width: 90%; }
+      &:nth-child(5) { width: 73%; }
+      &:nth-child(6) { width: 60%; }
+
     }
     > div {
       // margin: 0 0 3rem 4rem;
@@ -157,6 +152,11 @@ header {
       max-width: 100%;
       // background-size: cover;
       background-position: center center;
+      &#observer {
+        min-height: 320px;
+        max-width: 320px;
+
+      }
     }
     h2 {
       // font-family: "franklin-gothic-urw",sans-serif;
