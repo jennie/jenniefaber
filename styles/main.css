@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700');
+
 @font-face {
   font-family: 'monostena';
   src: url('../fonts/Monosten-A-webfont.eot');
@@ -294,7 +296,7 @@
   --bg-color: #fff;
 }
 body {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: 'Old Standard TT', serif;
   line-height: 1.52;
   color: #000;
   background-color: #fff;
@@ -306,6 +308,7 @@ body {
     max-width: 72rem;
   }
 }
+
 .bg {
   background: rgba(255, 255, 255, 0);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 160px, #eee 40%, rgba(255, 255, 255, 0) 100%);
@@ -352,11 +355,17 @@ p {
 header {
   margin: 2rem 0;
   position: relative;
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: 'Old Standard TT', serif;
   color: #000;
 }
 header .intro-text > * {
   margin: 0 1rem 0 0;
+}
+header .intro-text h1 {
+  background: linear-gradient(-180deg,#D9472A 0,#FF525B 100%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: rgba(255,255,255,.15);
 }
 header .headshot {
   min-height: 200px;
@@ -372,6 +381,8 @@ header h1 {
 }
 header h1 b {
   color: #000000;
+  text-transform: uppercase;
+letter-spacing: -3px;
 }
 header h2 {
   font-size: calc(14px + 1vw);
@@ -445,7 +456,7 @@ section#hire-me {
   margin: 6rem 0;
 }
 section#hire-me h2 {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: 'Old Standard TT', serif;
   color: #fff;
   background: #000;
   font-weight: normal;
@@ -465,8 +476,8 @@ section#hire-me .btn {
   display: inline-block;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  background: #394EFF;
-  border-color: #394EFF;
+  background: #FF525B;
+  border-color: #FF525B;
   color: #fff;
   font-size: 0.875rem;
   padding: 15px 50px;
@@ -474,8 +485,8 @@ section#hire-me .btn {
   margin: 1rem 0;
 }
 section#hire-me .btn:hover {
-  background: #0620ff;
-  border-color: #0016d2;
+  background: #FF525B;
+  border-color: #D9472A;
   color: #fff;
 }
 img {
@@ -485,42 +496,24 @@ img {
   position: relative;
 }
 .content a {
-  transition: all 0.2s ease-in-out;
-  color: #394EFF;
+  color: #FF525B;
   font-weight: 700;
-  text-decoration: none;
-  background-image: linear-gradient(#394eff 0%, #394EFF 100%);
-  background: linear-gradient(135deg, #394EFF, #394EFF);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 95%;
-  text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
-}
-@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
-  .content a {
-    background-image: linear-gradient(#394eff 0%, #394EFF 100%);
-    background-position: 0 93%;
-  }
 }
 .content a:hover {
-  color: #00119f;
-  background-image: linear-gradient(to bottom, #00119f 0%, #00119f 100%);
+  color: #D9472A;
 }
-.content a::selection,
-.content a > *::selection {
-  background-color: #ffffff;
-  color: #000000;
-  text-shadow: none;
-}
-.content a::-moz-selection,
-.content a > *::-moz-selection {
-  background-color: #ffffff;
-  color: #000000;
-  text-shadow: none;
-}
+
 .amp {
   font-family: 'monostena', 'Consolas', 'monospace';
 }
 footer {
   margin-bottom: 3rem;
+}
+
+.availability-badge.available {
+  color: #000;
+}
+.availability-badge.available:hover {
+  color: #000;
+  cursor:default;
 }
